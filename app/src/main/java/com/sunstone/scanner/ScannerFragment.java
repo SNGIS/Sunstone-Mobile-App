@@ -57,7 +57,6 @@ import com.sunstone.R;
 import com.sunstone.adapter.CustomDeviceListAdapter;
 import com.sunstone.model.ExtendedBluetoothDevice;
 
-import io.sentry.Sentry;
 import no.nordicsemi.android.support.v18.scanner.BluetoothLeScannerCompat;
 import no.nordicsemi.android.support.v18.scanner.ScanCallback;
 import no.nordicsemi.android.support.v18.scanner.ScanFilter;
@@ -311,7 +310,7 @@ public class ScannerFragment extends DialogFragment {
 					mAdapter.update(sunstoneDevicesList);
 
 			} catch (Exception e) {
-				Sentry.capture(e);
+				e.printStackTrace();
 			}
 		}
 

@@ -28,7 +28,6 @@ import co.nstant.in.cbor.model.ByteString;
 import co.nstant.in.cbor.model.DataItem;
 import co.nstant.in.cbor.model.Map;
 import co.nstant.in.cbor.model.UnsignedInteger;
-import io.sentry.Sentry;
 
 import static com.sunstone.utility.ParserUtils.binToHex;
 import static com.sunstone.utility.ParserUtils.byteToBin;
@@ -523,7 +522,6 @@ public class SlipCborUtils {
                     }
                 });
             } catch (CborException e) {
-                Sentry.capture(e);
                 e.printStackTrace();
             }
 
@@ -587,7 +585,6 @@ public class SlipCborUtils {
                     }
                 });
             } catch (CborException e) {
-                Sentry.capture(e);
                 e.printStackTrace();
             }
             bais.close();
@@ -758,7 +755,6 @@ public class SlipCborUtils {
 
                 });
             } catch (CborException e) {
-                Sentry.capture(e);
                 e.printStackTrace();
             }
 
@@ -917,7 +913,6 @@ public class SlipCborUtils {
                     }
                 });
             } catch (CborException e) {
-                Sentry.capture(e);
                 e.printStackTrace();
             }
             bais.close();

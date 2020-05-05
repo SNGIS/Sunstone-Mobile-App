@@ -30,7 +30,6 @@ import java.util.UUID;
 import androidx.appcompat.app.AlertDialog;
 
 import co.nstant.in.cbor.CborException;
-import io.sentry.Sentry;
 
 import static android.bluetooth.BluetoothGatt.GATT_SUCCESS;
 import static android.bluetooth.BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
@@ -537,7 +536,6 @@ public class LolanEntryAlert {
                 gatt.close();
             }
         } catch (CborException e) {
-            Sentry.capture(e);
             e.printStackTrace();
         }
     }
@@ -725,7 +723,6 @@ public class LolanEntryAlert {
                 gatt.writeCharacteristic(rxCharacteristic);
             }
         } catch (InterruptedException | IOException | CborException e) {
-            Sentry.capture(e);
             e.printStackTrace();
         }
     }

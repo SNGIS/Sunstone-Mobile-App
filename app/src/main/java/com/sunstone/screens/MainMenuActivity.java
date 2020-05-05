@@ -4,9 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import io.sentry.Sentry;
-import io.sentry.android.AndroidSentryClientFactory;
-import io.sentry.event.BreadcrumbBuilder;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -91,9 +88,6 @@ public class MainMenuActivity extends AppCompatActivity {
                     MY_PERMISSIONS_REQUEST_LOCATION);
 
         context = this.getApplicationContext();
-        String sentryDNS =null;
-//        String sentryDNS = getString(R.string.sentry_dns);
-        Sentry.init(sentryDNS, new AndroidSentryClientFactory(context));
 
         String accessToken = getIntent().getStringExtra(MainActivity.EXTRA_ACCESS_TOKEN);
         Auth0 auth0 = new Auth0(this);
@@ -105,13 +99,11 @@ public class MainMenuActivity extends AppCompatActivity {
                     new SharedPreferencesStorage(this));
         getProfile(accessToken);
 
-        Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainMenuActivity getting sharedPreferences").build());
         try {
             userDevicesSet = new HashSet<>();
             sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
 
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
@@ -121,7 +113,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         mHandler = new Handler();
 
-        Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainMenuActivity setting bluetooth manager").build());
         try {
             final BluetoothManager bluetoothManager =
                     (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
@@ -132,8 +123,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
             }
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
 
         initGui();
@@ -170,7 +160,7 @@ public class MainMenuActivity extends AppCompatActivity {
                                     mHandler.post(() -> Toast.makeText(MainMenuActivity.this, "No tags assigned for this user!", Toast.LENGTH_SHORT).show());
                                 }
                             } catch (Exception e) {
-                                Sentry.capture(e);
+                                e.printStackTrace();
                             }
                         }
 

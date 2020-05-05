@@ -51,7 +51,6 @@ import java.util.List;
 import java.util.Map;
 
 import co.nstant.in.cbor.CborException;
-import io.sentry.Sentry;
 
 import static android.bluetooth.BluetoothGatt.GATT_SUCCESS;
 import static android.bluetooth.BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
@@ -676,7 +675,6 @@ public class LolanMultiVariablesActivity extends AppCompatActivity {
             }
 
         } catch (CborException e) {
-            Sentry.capture(e);
             e.printStackTrace();
         }
     }

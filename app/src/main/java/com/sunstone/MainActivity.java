@@ -6,8 +6,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import io.sentry.Sentry;
-import io.sentry.android.AndroidSentryClientFactory;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -34,8 +32,6 @@ import com.auth0.android.provider.VoidCallback;
 import com.auth0.android.provider.WebAuthProvider;
 import com.auth0.android.result.Credentials;
 import com.sunstone.screens.MainMenuActivity;
-
-import io.sentry.event.BreadcrumbBuilder;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -109,11 +105,8 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
 
         Context context = this.getApplicationContext();
-        String sentryDNS = null;
-        Sentry.init(sentryDNS, new AndroidSentryClientFactory(context));
 
         try {
-            Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainActivity auth0 setup, logout").build());
             auth0 = new Auth0(this);
             auth0.setOIDCConformant(true);
             credentialsManager = new SecureCredentialsManager(this,
@@ -130,8 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
     }
 
@@ -175,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void login() {
-        Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainActivity login").build());
         try {
             runOnUiThread(() -> changeButton(btnLoginMain, progressBar));
             WebAuthProvider.login(auth0)
@@ -201,7 +192,6 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onSuccess(@NonNull Credentials credentials) {
-                            Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainActivity login successful, user credentials").build());
                             try {
                                 credentialsManager.saveCredentials(credentials);
                                 Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
@@ -211,27 +201,24 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             } catch (Exception e) {
-                                Sentry.capture(e);
+                                e.printStackTrace();
                             }
                         }
                     });
 
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
     }
 
 
     private void logout() {
-        Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainActivity logout WebAuthProvider").build());
         try {
             WebAuthProvider.logout(auth0)
                     .withScheme("demo")
                     .start(this, logoutCallback);
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
     }
 
@@ -244,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                 sharedPreferencesEditor.clear();
                 sharedPreferencesEditor.apply();
             } catch (Exception e) {
-                Sentry.capture(e);
+                e.printStackTrace();
             }
         }
 
@@ -261,7 +248,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void changeButton(Button b, ProgressBar p) {
-        Sentry.getContext().recordBreadcrumb(new BreadcrumbBuilder().setMessage("MainActivity changeButton").build());
         try {
             if (b.isEnabled()) {
                 b.setEnabled(false);
@@ -273,8 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 p.setVisibility(View.GONE);
             }
         } catch (Exception e) {
-            Sentry.capture(e);
-            Sentry.getContext().clearBreadcrumbs();
+            e.printStackTrace();
         }
     }
 

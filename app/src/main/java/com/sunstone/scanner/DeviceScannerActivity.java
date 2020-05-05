@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import io.sentry.Sentry;
 import no.nordicsemi.android.support.v18.scanner.BluetoothLeScannerCompat;
 import no.nordicsemi.android.support.v18.scanner.ScanCallback;
 import no.nordicsemi.android.support.v18.scanner.ScanFilter;
@@ -168,7 +167,7 @@ public class DeviceScannerActivity extends AppCompatActivity {
                     mAdapter.update(sunstoneDevicesList);
 
             } catch (Exception e) {
-                Sentry.capture(e);
+                e.printStackTrace();
             }
         }
 
