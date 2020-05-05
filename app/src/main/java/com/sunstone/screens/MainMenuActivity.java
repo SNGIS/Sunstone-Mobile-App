@@ -91,7 +91,8 @@ public class MainMenuActivity extends AppCompatActivity {
                     MY_PERMISSIONS_REQUEST_LOCATION);
 
         context = this.getApplicationContext();
-        String sentryDNS = getString(R.string.sentry_dns);
+        String sentryDNS =null;
+//        String sentryDNS = getString(R.string.sentry_dns);
         Sentry.init(sentryDNS, new AndroidSentryClientFactory(context));
 
         String accessToken = getIntent().getStringExtra(MainActivity.EXTRA_ACCESS_TOKEN);
