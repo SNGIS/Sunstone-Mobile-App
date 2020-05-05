@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_scanner_time"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Time" />
+
+    <item
+        android:id="@+id/menu_scanner_time_0"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="50"
+        app:showAsAction="withText"
+        android:title="@string/str_scan_duration" />
+
+    <item
+        android:id="@+id/menu_scanner_time_1"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/str_5s" />
+
+    <item
+        android:id="@+id/menu_scanner_time_2"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="@string/str_7s" />
+
+    <item
+        android:id="@+id/menu_scanner_time_3"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="300"
+        app:showAsAction="never"
+        android:title="@string/str_10s" />
+
+    <item
+        android:id="@+id/menu_scanner_time_4"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="400"
+        app:showAsAction="never"
+        android:title="@string/str_15s" />
+
+    <item
+        android:id="@+id/menu_scanner_time_other"
+        android:icon="@drawable/ic_bluetooth_white"
+        android:orderInCategory="500"
+        app:showAsAction="never"
+        android:title="@string/str_other" />
+
+</menu>

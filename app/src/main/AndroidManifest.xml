@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sunstone">
+    <!-- QR Scanner -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.hardware.camera.autofocus" /> <!-- Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Firmware files -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Authentication -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- ANDROID 10 -->
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".screens.LolanHeaderActivity"></activity>
+        <activity
+            android:name=".LauncherActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screens.UpdateDeviceMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screens.LolanVariablesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".scanner.DeviceScannerMultiDfuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screens.LolanMultiVariablesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dfu.DfuMultiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".scanner.DeviceScannerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".scanner.DeviceScannerMultiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screens.MainMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dfu.DfuActivity"
+            android:icon="@drawable/ic_dfu_feature"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dfu.settings.SettingsActivity"
+            android:label="@string/dfu_settings_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dfu.NotificationActivity"
+            android:label="@string/dfu_feature_title"
+            android:screenOrientation="portrait" />
+        <service
+            android:name=".dfu.DfuService"
+            android:exported="true"
+            android:label="@string/dfu_service_title" />
+
+        <activity
+            android:name=".dfu.DfuInitiatorActivity"
+            android:label="@string/dfu_service_title"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Translucent" />
+    </application>
+
+</manifest>

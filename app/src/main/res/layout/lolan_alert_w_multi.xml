@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_alert_lolanvar_w_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="16dp"
+        android:padding="8dp"
+        android:text="LoLaN variable:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_lolanvar_connection_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@id/tv_alert_lolanvar_w_title"
+        android:text="Connection status"/>
+
+    <ProgressBar
+        android:id="@+id/pb_lolan_alert_w"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_alert_lolanvar_w_title"
+        style="?android:attr/progressBarStyle"
+        android:indeterminateDrawable="@drawable/pb_scanner"
+        android:indeterminateDuration="@android:integer/status_bar_notification_info_maxnum" />
+
+    <LinearLayout
+        android:id="@+id/ll_alert_lolanvar_write_only_vals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_alert_lolanvar_w_title"
+        android:orientation="horizontal">
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_alert_lolan_val_w"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Value: " />-->
+
+        <TextView
+            android:id="@+id/tv_alert_lolan_read_val_w"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_alert_lolanvar_w_vals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_alert_lolanvar_write_only_vals"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_alert_w_setval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set new value: " />
+
+        <EditText
+            android:id="@+id/et_alert_w_setval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="set new value" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_alert_lolanvar_w_response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_alert_lolanvar_w_vals"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_alert_lolan_w_response"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reply: " />
+
+        <TextView
+            android:id="@+id/tv_alert_lolan_w_response_val"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_alert_lolan_buttons_r"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_alert_lolanvar_w_response"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_alert_lolan_w_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="12sp"
+            android:text="SET"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_alert_lolan_w_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="12sp"
+            android:text="OK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_alert_lolan_info_w"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_alert_lolan_buttons_r">
+
+        <TextView
+            android:id="@+id/tv_alert_lolan_info_title_w"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginVertical="6dp"
+            android:text="VARIABLE INFORMATION"/>
+
+        <TextView
+            android:id="@+id/tv_alert_lolan_info_content_w"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Information" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

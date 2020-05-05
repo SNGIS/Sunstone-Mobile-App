@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015, Nordic Semiconductor
+  ~ All rights reserved.
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the
+  ~ documentation and/or other materials provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this
+  ~ software without specific prior written permission.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  ~ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  ~ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  ~ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+  ~ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  ~ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="6dp">
+
+	<CheckBox
+		android:id="@+id/iv_cb_scanner"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_alignParentEnd="true"
+		android:focusable="false" />
+
+
+	<LinearLayout
+		android:id="@+id/ll_device_scanner_multivar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:textColor="#000000"
+			android:textStyle="bold"
+			android:textSize="14sp"/>
+
+		<LinearLayout
+			android:id="@+id/ll_type"
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/tv_device_type"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="@string/str_device_type"
+				android:textSize="12sp"/>
+
+			<TextView
+				android:id="@+id/device_type"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textSize="12sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_id"
+			android:orientation="horizontal"
+			android:layout_below="@id/ll_type"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/tv_device_id"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="@string/str_device_id"
+				android:textSize="12sp"/>
+
+			<TextView
+				android:id="@+id/device_id"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textSize="12sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_fw"
+			android:orientation="horizontal"
+			android:layout_below="@id/ll_id"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/tv_fw_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="@string/str_fw_version"
+				android:textSize="12sp"/>
+
+			<TextView
+				android:id="@+id/fw_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textSize="12sp"/>
+
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:id="@+id/ll_bl"
+			android:orientation="horizontal"
+			android:layout_below="@id/ll_fw"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/tv_bl_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="@string/str_bl_version"
+				android:textSize="12sp"/>
+
+			<TextView
+				android:id="@+id/bl_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textSize="12sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_sd"
+			android:orientation="horizontal"
+			android:layout_below="@id/ll_bl"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/tv_sd_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bl_version"
+				android:textColor="#000000"
+				android:text="@string/str_sd_version"
+				android:textSize="12sp"/>
+
+
+			<TextView
+				android:id="@+id/sd_version"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bl_version"
+				android:textColor="#000000"
+				android:textSize="12sp"/>
+
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+
+</RelativeLayout>

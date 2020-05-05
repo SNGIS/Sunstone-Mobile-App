@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sunstone RTLS</string>
+
+    <string name="btn_login">Login</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="action_about">About</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_connect">CONNECT</string>
+    <string name="action_select">SELECT DEVICE</string>
+    <string name="action_add_device">ADD DEVICE</string>
+    <string name="action_connecting">CONNECTING…</string>
+    <string name="action_disconnect">DISCONNECT</string>
+    <string name="action_disconnecting">DISCONNECTING…</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="drawer_plugins">PLUGINS</string>
+    <string name="drawer_plugin_nrf_connect">nRF Connect</string>
+
+    <string name="battery">%d%%</string>
+    <string name="not_available">n/a</string>
+    <string name="not_available_value">" - "</string>
+    <string name="no_ble">Device doesn\'t have BLE support!</string>
+    <string name="no_apps">No profiles found.</string>
+    <string name="not_supported">The device does not have required services.</string>
+    <string name="no_application">Web Browser application is not available.</string>
+    <string name="no_application_play">Google Play not installed.</string>
+    <string name="no_required_permission">Permission denied.</string>
+    <string name="scanner_title">Select device:</string>
+    <string name="scanner_empty">No device found.</string>
+    <string name="scanner_action_scan">Scan</string>
+    <string name="scanner_action_cancel">Cancel</string>
+    <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth Smart devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
+
+    <string name="permission_title">Permission required</string>
+    <string name="permission_sd_text">nRF Toolbox would like to copy some sample applications, that may be uploaded onto your nRF51 device using the DFU (Device Firmware Update), to the memory of this device. If you agree, you will be asked to give the application permission to access files on your device.</string>
+    <string name="about_title">About</string>
+    <string name="about_version">\n\nVersion: %s</string>
+    <string name="about_text">The nRF Toolbox is a container application that stores your Nordic Semiconductor apps in one location.</string>
+    <string name="bonding">Bonding with the device&#8230;</string>
+    <string name="bonded">The device is now bonded.</string>
+    <string name="bonding_failed">Bonding failed.</string>
+
+    <string name="channel_connected_devices_title">Background connections</string>
+    <string name="channel_connected_devices_description">Shows a notification when a device is connected in background.</string>
+    <string name="channel_files_title">Files</string>
+    <string name="channel_files_description">Shows notifications when new files has been saved.</string>
+    <string name="channel_proximity_warnings_title">Proximity warnings</string>
+    <string name="channel_proximity_warnings_description">Shows notifications when a proximity device got out of range.</string>
+    <string name="str_select_file">Select file</string>
+    <string name="str_quit">QUIT</string>
+
+    <string name="notification_connected_message">%s is connected.</string>
+
+
+    <string name="path_111">Device type number (the actual device type can be resolved with a look-up table).</string>
+    <string name="path_112">Hardware descriptor string (friendly name of this device).</string>
+    <string name="path_115">Upper word of the microcontroller\'s unique identifier.</string>
+    <string name="path_116">Lower word of the microcontroller\'s unique identifier.</string>
+    <string name="path_120">Unique identifier of the hardware (a.k.a. serial number).</string>
+    <string name="path_131">Firmware version number.</string>
+    <string name="path_132">Bootloader version number.</string>
+    <string name="path_135">Nordic SoftDevice version number</string>
+
+    <string name="path_210">LoLaN ID of the device.
+        \nDefault: <b>32767</b> or the serial number modulo 10000 (last four digits in decimal)</string>
+    <string name="path_221">Interval between the UWB beacon packets in active mode in milliseconds.
+        \nMinimum value: 100
+\nDefault: <b>1000</b></string>
+    <string name="path_222">The rate of accelerometer data informing in active mode depends on this setting. If the value of this variable is n, every n-th packet will contain acceleration data. Set to zero to disable this feature, set to 1 to make every single packet contain acceleration data.
+\nDefault: <b>0</b></string>
+    <string name="path_223">Time-out of the active mode (computed from the last detected movement) in milliseconds. \nMinimum value: 1000.
+\nDefault: <b>10000</b></string>
+    <string name="path_230">Interval between packets containing information about this device.
+        \nMinimum value: 1000.
+\nDefault: <b>30000</b></string>
+    <string name="path_241">The minimum acceleration to leave quiescent mode (14-bit raw value, LSB = 0,244 mg). If the acceleration reaches this limit, transition to active mode occurs (in quiescent mode) or the device stays in active mode (in active mode).
+Mind the maximum resolution of the accelerometer IC and the high resolution mode when setting this parameter!
+\nDefault: <b>128</b></string>
+    <string name="path_242">Averaging time for the rest (quiescence) detection in milliseconds: quiescence can be detected with this delay. Minimum and maximum possible value depends on accelerometer data rate settings. \nRecommended range: 500..2000
+\nDefault: <b>2000</b></string>
+    <string name="path_243">Switch of the high resolution accelerometer mode (logical value). Non-zero value enables high resolution mode, which fully exploits the accelerometer\'s possibilities resulting in 10, 12 or 14-bit acceleration values (depending on the hardware) and more power consumption. If set to zero, only 8-bit values will be obtained with less consumed power.
+\nDefault: <b>0</b></string>
+    <string name="path_244">Acceleration data collector mode setting. If this feature is enabled, acceleration data with relative timestamps will be accumulated in TSD format in acc_data_tsd variable. When the accumulator buffer becomes fills up (it can contain 10 acceleration vector with timestamp) it will be INFORMed.
+\nValid options:
+\n
+0 = disabled
+\n
+1 = 1.25 Hz mode
+\n
+6 = 6.25 Hz mode
+\n
+12 = 12.5 Hz mode
+\n
+50 = 50 Hz mode
+\n
+100 = 100 Hz mode
+\n
+Default: <b>0</b></string>
+    <string name="path_245">Acceleration data collector <b>mode always on</b> setting. Set non-zero to make accelerometer data collection run continuously in active and also quiescent mode. Otherwise (on zero) it will run only in active mode.
+\nDefault: <b>0</b></string>
+    <string name="path_250">Delay of the movement after quiescent mode indicator packets in milliseconds. Minimum and maximum possible value depends on accelerometer data rate settings. \nRecommended range: 500..1000
+\nDefault: <b>500</b></string>
+    <string name="path_260">A 4-bit number, which is the part of the BLE advertising packet. It can be used for various purposes. \nValid values: 0..15
+\nDefault: <b>0</b></string>
+    <string name="path_310">UWB channel number. \nValid options: 1, 2, 3, 4, 5, 7
+\nDefault: <b>2</b></string>
+    <string name="path_321">UWB packet preamble setting. \nDefault: <b>3</b></string>
+    <string name="path_322">UWB packet preamble length. Valid options: 64, 128, 256, 512, 1024, 2048, 4096.
+\nDefault: <b>1024</b></string>
+    <string name="path_330">Bit rate of UWB communication (in kbps). \nValid options: 110, 850, 6800.
+\nDefault: <b>110</b></string>
+    <string name="path_341">Pulse repetition frequency of UWB communication (in MHz). Valid options: 4, 16, 64.
+\nDefault: <b>16</b></string>
+    <string name="path_351">Transmission power for the UWB PHY header. Valid range: 0..67 (bigger value means bigger Tx power).
+\nDefault: <b>67</b></string>
+    <string name="path_352">Transmission power for the synchronization header (SHR) and data. Valid range: 0..67 (bigger value means bigger Tx power).
+\nDefault: <b>67</b></string>
+    <string name="path_360">Start of Frame Delimiter (SFD) setting.
+\n0 = standard
+\n1 = Decawave proprietary
+\nDefault: <b>0</b></string>
+    <string name="path_410">Write non-zero value to this variable to reset the device.</string>
+    <string name="path_421">Write non-zero value to this variable to save settings to the flash memory.</string>
+    <string name="path_422">Write non-zero value to this variable to reset the stored settings in the flash memory.</string>
+    <string name="path_510">The actual state of the device.
+\n1 = normal operation
+\n2 = charging (ProTag only)
+\n3 = pre-shutdown state, battery is exhausted (ProTag only)
+\n4 = movement detected after quiescence (technical)
+\n5 = quiescence detected after movement (technical)</string>
+    <string name="path_521">ProTag: battery charge percentage level, uint8 type.
+\nDuraTag: battery voltage level in millivolts, uint16 type.</string>
+    <string name="path_522">Logical value, non-zero if charge is completed. \n(Has no meaning if not charging, also no meaning in DuraTags.)</string>
+    <string name="path_531">The last acceleration value, x-axis component.</string>
+    <string name="path_532">The last acceleration value, y-axis component.</string>
+    <string name="path_533">The last acceleration value, z-axis component.</string>
+    <string name="path_534">Bit depth of the acceleration values. If this value is b, the full dynamic range will be <i>-2^(b-1) … 2^(b-1)-1</i> which corresponds to an acceleration range of +/-2g.</string>
+    <string name="path_535">TSD format acceleration data collection. \n <i>See FPTSD.PDF for mode information.</i></string>
+    <string name="path_540">The temperature in Celsius degrees measured by the built-in temperature sensor of the pressure meter device. Always zero if no pressure meter present.</string>
+    <string name="path_550">The air pressure in pascals measured by the pressure meter device. Always zero if no pressure meter present.</string>
+    <string name="path_560">Counts the UWB beacon packets has been transmitted since the last charging was ended.</string>
+    <string name="path_571">Number of suspicious acceleration value events. The FXOS8700 series accelerometer might fail in a particular manner (damaged on PCB assembly?) then it produces maximum acceleration values on some axis in a row (ever for minutes). The accelerometer fail check module tries to count these events and increments this variable. So this should be near zero, otherwise it may indicate accelerometer chip defect.</string>
+    <string name="path_572">Accelerometer vector magnitude detection mode for movement detection to reduce power consumption.
+\n0 = VECM is disabled because acceleration data need to be reported - DRDY used instead
+\n1 = VECM is enabled</string>
+    <string name="scanner_action_select_devices">Select</string>
+    <string name="str_update_device">Update device</string>
+    <string name="str_logout">Logout</string>
+    <string name="str_update_single_device">Update single device</string>
+    <string name="str_update_multiple_devices">Update multiple devices</string>
+    <string name="str_update_firmware_for_single_device">Update Firmware for single device</string>
+    <string name="str_update_firmware_for_multiple_devices">Update Firmware for multiple devices</string>
+    <string name="str_go_back">Back</string>
+    <string name="str_variable_information">VARIABLE INFORMATION</string>
+    <string name="str_alert_value">Value:</string>
+    <string name="str_set_new_value">Set new value:</string>
+    <string name="str_reply">Reply:</string>
+    <string name="str_set">SET</string>
+    <string name="str_refresh">REFRESH</string>
+    <string name="str_ok">OK</string>
+    <string name="str_stop">STOP</string>
+    <string name="str_information">Information</string>
+    <string name="str_lolan_variable">LoLaN variable:</string>
+    <string name="str_connection_status">Connection status</string>
+    <string name="str_choose_scan_duration">Choose scan duration in seconds:</string>
+    <string name="str_scan_duration">Scan duration</string>
+    <string name="str_5s">5s</string>
+    <string name="str_7s">7s</string>
+    <string name="str_10s">10s</string>
+    <string name="str_15s">15s</string>
+    <string name="str_other">other</string>
+
+    <string name="str_refreshing">REFRESHING…</string>
+
+    <string name="auth_alert_title">Set Auth0 credentials</string>
+    <string name="auth_alert_message">Auth0 client ID and Auth0 domain credentials are undefined.</string>
+    <string name="str_device_type">Device type:</string>
+    <string name="str_device_id">Device ID:</string>
+    <string name="str_fw_version">FW version:</string>
+    <string name="str_bl_version">BL version:</string>
+    <string name="str_sd_version">SD version:</string>
+    <string name="str_firmware_update">Firmware update</string>
+    <string name="str_variables_update">Variables update</string>
+    <string name="str_read">READ</string>
+    <string name="str_selected_devices">Selected devices</string>
+    <string name="str_configure_header">Configure header</string>
+    <string name="str_save">Save</string>
+    <string name="str_cancel">Cancel</string>
+
+    <string name="str_added_to_set">Added to update:\n[%1$s]: %2$s</string>
+
+    <string name="str_status_connected">CONNECTED: %1$s</string>
+    <string name="str_status_refreshing">REFRESHING… %1$s</string>
+
+    <string name="str_current_status_reply">%1$s %2$s \nCOMPLETED</string>
+    <string name="str_current_status_timeout">%1$s %2$s \nERROR: request rejected: %3$d</string>
+
+    <string name="str_connected_to">CONNECTED TO %1$s</string>
+    <string name="str_updating">UPDATING %1$s</string>
+
+
+    <string name="str_viewholder_path">[%1$s]</string>
+
+</resources>
